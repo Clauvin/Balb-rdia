@@ -42,7 +42,7 @@ class Frascos:
                 if self.e_ai_quebrou(altura_de_teste):
                     quebrou = True
                     if (i == self.garrafas - 1):
-                        return round(self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco)
+                        return self.o_resultado_e(qual_pedaco)
                     self.escolher_pedaco_como_conjunto_de_alturas_de_teste(qual_pedaco)
                     break
 
@@ -54,7 +54,9 @@ class Frascos:
             return True
         else: return False
         
-    def escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco):
-        self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco - 1)
-        self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
+    def o_resultado_e(self, qual_pedaco):
+        return round(self.altura_inicial) + round(self.tamanho_de_pedaco) * qual_pedaco
         
+    def escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco):
+        self.altura_inicial = round(self.altura_inicial) + round(self.tamanho_de_pedaco) * (qual_pedaco - 1)
+        self.altura_final = round(self.altura_inicial) + round(self.tamanho_de_pedaco) * qual_pedaco
