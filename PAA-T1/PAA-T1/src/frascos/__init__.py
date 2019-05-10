@@ -35,13 +35,11 @@ class Frascos:
                     quebrou = True
                     if (i == self.garrafas - 1):
                         return self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
-                    self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco - 1)
-                    self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
+                    escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco)
                     break
 
                 if (qual_pedaco == self.quantidade_de_pedacos - 1) and (quebrou == False):
-                    self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco - 1)
-                    self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
+                    escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco)
                     
     def e_ai_quebrou(self, onde_deixaram_cair):
         print("onde_quebra " + str(self.onde_quebra))
@@ -49,3 +47,8 @@ class Frascos:
         if (self.onde_quebra <= onde_deixaram_cair):
             return True
         else: return False
+        
+    def escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco):
+        self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco - 1)
+        self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
+        
