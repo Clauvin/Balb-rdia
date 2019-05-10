@@ -1,0 +1,4 @@
+import frascos
+
+teste_1 = frascos.Frascos(100, 2, 53)
+teste_1.descobrir_onde_quebra() 

@@ -1,0 +1,4 @@
+import dijkstra
+
+comVetor = DijkstraComVetor.__init__()
+ 

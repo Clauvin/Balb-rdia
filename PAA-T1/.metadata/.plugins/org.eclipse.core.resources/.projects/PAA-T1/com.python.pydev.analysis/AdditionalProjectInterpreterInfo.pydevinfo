@@ -1,0 +1,83 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\GitHub for WebGL\PAA-T1\.metadata\.plugins\org.eclipse.core.resources\.projects\PAA-T1\com.python.pydev.analysis\v2_indexcache
+dijkstra.__init__|1556505625372586000|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\dijkstra\__init__.py
+examplescpuTimer.exemplo_01|1556480636511547000|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\exemplo_01.py
+examplescpuTimer.exemplo_02|1556480636513546000|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\exemplo_02.py
+examplescpuTimer.__init__|1556480799579202000|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\__init__.py
+CPUtimer|1556480636508543000|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\cpuTimer\CPUtimer.py
+__init__|1556480624434095000|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\cpuTimer\__init__.py
+testesDeDijkstra.__init__|1556489379700775000|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\testesDeDijkstra\__init__.py
+frascos_testes.__init__|1557516875658683000|C:\GitHub for WebGL\PAA-T1\PAA-T1\frascos_testes\__init__.py
+frascos.__init__|1557517596598689000|C:\GitHub for WebGL\PAA-T1\PAA-T1\frascos\__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+23
+13=Frascos
+18=DijkstraComVetor.__init__
+15=CPUTimer
+8=examplescpuTimer.exemplo_01
+1=C:\GitHub for WebGL\PAA-T1\PAA-T1\src\cpuTimer\CPUtimer.py
+6=examplescpuTimer.exemplo_02
+20=CPUTimer.reset
+14=DijkstraComVetor
+12=frascos_testes.__init__
+11=C:\GitHub for WebGL\PAA-T1\PAA-T1\frascos_testes\__init__.py
+4=dijkstra.__init__
+22=CPUTimer.__init__
+9=C:\GitHub for WebGL\PAA-T1\PAA-T1\frascos\__init__.py
+19=CPUTimer.stop
+21=CPUTimer.auto_loop
+5=C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\exemplo_02.py
+7=C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\exemplo_01.py
+16=Frascos.descobrir_onde_quebra
+3=C:\GitHub for WebGL\PAA-T1\PAA-T1\src\dijkstra\__init__.py
+17=Frascos.__init__
+2=CPUtimer
+23=CPUTimer.start
+10=frascos.__init__
+-- END DICTIONARY
+-- START TREE 1
+9
+cpu|1|CPUTimer!1^12#7*17@
+dij|1|DijkstraComVetor!3^1#7*33@
+fib|2|fib!5^11#5*50@fib!7^11#5*66@
+fra|1|Frascos!9^3#7*81@
+res|1|result_1!11^4#1*99@
+sel|0|
+tes|1|teste_1!11^3#1*99@
+tim|2|timer!7^17#1*67@timer!5^17#1*51@
+w_f|1|w_fib!5^21#5*50@
+-- END TREE
+-- START TREE 2
+29
+__i|3|__init__!13&9^13#9*82@__init__!14&3^12#9*34@__init__!15&1^26#9*18@
+alt|7|altura_inicial!13&9^9#5*83@altura_inicial!16&9^38#21*83@altura!13&9^5#5*83@altura!17&9^19#9*83@altura_final!13&9^10#5*83@altura_final!17&9^20#9*83@altura_final!16&9^39#21*83@
+are|2|arestas!14&3^5#5*35@arestas!18&3^14#9*35@
+aut|1|auto_loop!15&1^287#9*18@
+ava|4|avarage!15&1^19#5*19@avarage!19&1^68#21*19@avarage!20&1^107#9*19@avarage!21&1^317#9*19@
+che|1|checarTodosOsValores!14&3^35#9*34@
+des|1|descobrir_onde_quebra!13&9^26#9*82@
+det|3|detail_level!15&1^22#5*19@detail_level!22&1^37#9*19@detail_level!21&1^306#9*19@
+dis|2|distancias_de_arestas!14&3^7#5*35@distancias_de_vertices!14&3^6#5*35@
+e_a|1|e_ai_quebrou!13&9^46#9*82@
+enc|1|encontrarMenorCaminhoAVertices!14&3^32#9*34@
+gar|2|garrafas!13&9^6#5*83@garrafas!17&9^21#9*83@
+get|2|get_stamp!15&1^220#9*18@get_time!15&1^112#9*18@
+ini|1|iniciarVetorDeDistancias!14&3^18#9*34@
+lap|1|lap!15&1^75#9*18@
+las|4|last!15&1^21#5*19@last!19&1^64#17*19@last!20&1^109#9*19@last!21&1^311#13*19@
+ond|2|onde_quebra!13&9^11#5*83@onde_quebra!17&9^24#9*83@
+par|0|
+pre|1|preds!14&3^8#5*35@
+qua|3|quantidade_de_pedacos!13&9^7#5*83@quantidade_de_pedacos!17&9^22#9*83@quantidade_de_pedacos!16&9^30#13*83@
+que|0|
+res|1|reset!15&1^97#9*18@
+sen|2|sensor!15&1^23#5*19@sensor!22&1^35#13*19@
+sta|5|start_mark!15&1^18#5*19@start_mark!23&1^47#13*19@start_mark!19&1^72#13*19@start_mark!20&1^106#9*19@start!15&1^40#9*18@
+sto|1|stop!15&1^50#9*18@
+tam|2|tamanho_de_pedaco!13&9^8#5*83@tamanho_de_pedaco!17&9^23#9*83@
+tim|1|times!15&1^17#5*19@
+tot|4|total!15&1^20#5*19@total!19&1^65#17*19@total!20&1^108#9*19@total!21&1^310#13*19@
+ver|5|vertices!14&3^3#5*35@vertices!18&3^13#9*35@vertice_fonte!14&3^4#5*35@vertice_fonte!18&3^15#9*35@vertices_com_menor_caminho_determinado!14&3^10#5*35@
+-- END TREE

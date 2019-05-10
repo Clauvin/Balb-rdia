@@ -1,0 +1,3 @@
+import frascos
+
+teste_1 = frascos.Frascos(100, 2, 53)

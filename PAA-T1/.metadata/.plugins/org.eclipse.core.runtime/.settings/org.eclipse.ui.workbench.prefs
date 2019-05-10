@@ -1,0 +1,5 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
+eclipse.preferences.version=1
+editors=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<editors>\r\n<descriptor class\="org.eclipse.jdt.internal.ui.javaeditor.ClassFileEditor" id\="org.eclipse.jdt.ui.ClassFileEditor" image\="$nl$/icons/full/obj16/classf_obj.png" internal\="true" label\="Class File Viewer" openMode\="1" open_in_place\="false" plugin\="org.eclipse.jdt.ui"/>\r\n</editors>
+resourcetypes=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<editors version\="3.1">\r\n<info contentType\="userCreated1557517056277">\r\n<editor id\="org.eclipse.jdt.ui.ClassFileEditor"/>\r\n</info>\r\n</editors>

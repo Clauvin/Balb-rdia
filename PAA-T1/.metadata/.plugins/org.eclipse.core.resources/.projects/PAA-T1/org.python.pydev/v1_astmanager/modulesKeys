@@ -1,0 +1,10 @@
+MODULES_MANAGER_V2
+CPUtimer|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\cpuTimer\CPUtimer.py
+__init__|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\cpuTimer\__init__.py
+dijkstra.__init__|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\dijkstra\__init__.py
+examplescpuTimer.__init__|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\__init__.py
+examplescpuTimer.exemplo_01|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\exemplo_01.py
+examplescpuTimer.exemplo_02|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\examplescpuTimer\exemplo_02.py
+frascos.__init__|C:\GitHub for WebGL\PAA-T1\PAA-T1\frascos\__init__.py
+frascos_testes.__init__|C:\GitHub for WebGL\PAA-T1\PAA-T1\frascos_testes\__init__.py
+testesDeDijkstra.__init__|C:\GitHub for WebGL\PAA-T1\PAA-T1\src\testesDeDijkstra\__init__.py
