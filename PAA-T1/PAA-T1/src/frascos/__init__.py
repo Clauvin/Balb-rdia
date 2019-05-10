@@ -35,7 +35,6 @@ class Frascos:
             quebrou = False
             self.quantidade_de_pedacos = round(self.quantidade_de_pedacos)
             for qual_pedaco in range(self.quantidade_de_pedacos):
-                print (qual_pedaco)
                 altura_de_teste = self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
                 if self.e_ai_quebrou(altura_de_teste):
                     quebrou = True
