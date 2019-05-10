@@ -42,7 +42,7 @@ class Frascos:
                 self.quantidade_de_pedacos = self.altura_final - self.altura_inicial
             for qual_pedaco in range(self.quantidade_de_pedacos):
                 altura_de_teste = round(self.altura_inicial) + round(self.tamanho_de_pedaco) * qual_pedaco
-                print("altura_de_teste")
+                print("altura_de_teste " + str(altura_de_teste))
                 if self.e_ai_quebrou(altura_de_teste):
                     quebrou = True
                     if (i == self.garrafas - 1):
