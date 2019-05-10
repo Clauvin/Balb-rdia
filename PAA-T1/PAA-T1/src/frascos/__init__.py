@@ -11,10 +11,7 @@ class Frascos:
     onde_quebra = 0
     
     def __init__(self, altura, garrafas, onde_quebra):
-        if ((altura <= 0) or (garrafas <= 0) or (onde_quebra <= 0)):
-            if (altura <= 0): print ("Ei, voce esta passando altura <= 0, ela precisa ser positiva.")
-            if (garrafas <= 0): print ("Precisamos de uma garrafa no minimo pra testar...")
-            if (onde_quebra <= 0): print ("Entao a garrafa nao aguenta existir...")
+        if self.variaveis_tem_valores_corretos(altura, garrafas, onde_quebra):
             return
         self.altura = altura
         self.altura_final = altura
@@ -22,6 +19,15 @@ class Frascos:
         self.quantidade_de_pedacos = math.pow(altura, 1/garrafas)
         self.tamanho_de_pedaco = altura
         self.onde_quebra = onde_quebra
+
+    def variaveis_tem_valores_corretos(self, altura, garrafas, onde_quebra):
+        if ((altura <= 0) or (garrafas <= 0) or (onde_quebra <= 0)):
+            if (altura <= 0): print ("Ei, voce esta passando altura <= 0, ela precisa ser positiva.")
+            if (garrafas <= 0): print ("Precisamos de uma garrafa no minimo pra testar...")
+            if (onde_quebra <= 0): print ("Entao a garrafa nao aguenta existir...")
+            return True
+        return False
+    
         
     def descobrir_onde_quebra(self):
         for i in range(self.garrafas):
@@ -35,15 +41,13 @@ class Frascos:
                     quebrou = True
                     if (i == self.garrafas - 1):
                         return self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
-                    escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco)
+                    self.escolher_pedaco_como_conjunto_de_alturas_de_teste(qual_pedaco)
                     break
 
                 if (qual_pedaco == self.quantidade_de_pedacos - 1) and (quebrou == False):
-                    escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco)
+                    self.escolher_pedaco_como_conjunto_de_alturas_de_teste(qual_pedaco)
                     
     def e_ai_quebrou(self, onde_deixaram_cair):
-        print("onde_quebra " + str(self.onde_quebra))
-        print("onde_deixaram_cair " + str(onde_deixaram_cair))
         if (self.onde_quebra <= onde_deixaram_cair):
             return True
         else: return False
