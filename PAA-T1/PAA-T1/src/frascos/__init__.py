@@ -16,9 +16,12 @@ class Frascos:
         self.altura = altura
         self.altura_final = altura
         self.garrafas = garrafas
-        self.quantidade_de_pedacos = math.pow(altura, 1/garrafas)
+        self.quantidade_de_pedacos = self.calcular_quantidade_de_pedacos()
         self.tamanho_de_pedaco = altura
         self.onde_quebra = onde_quebra
+        
+    def calcular_quantidade_de_pedacos(self):
+        return math.pow(self.altura, 1/self.garrafas)
 
     def variaveis_tem_valores_corretos(self, altura, garrafas, onde_quebra):
         if ((altura <= 0) or (garrafas <= 0) or (onde_quebra <= 0)):
