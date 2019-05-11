@@ -30,6 +30,6 @@ teste_correto_6 = frascos.Frascos(1001, 8, 1)
 resultado_correto_6 = teste_correto_6.descobrir_onde_quebra()
 print("Resultado do teste_correto_6: " + str(resultado_correto_6))
 
-teste_correto_7 = frascos.Frascos(1001, 6, 1)
+teste_correto_7 = frascos.Frascos(1001, 2, 1)
 resultado_correto_7 = teste_correto_7.descobrir_onde_quebra()
 print("Resultado do teste_correto_7: " + str(resultado_correto_7))
