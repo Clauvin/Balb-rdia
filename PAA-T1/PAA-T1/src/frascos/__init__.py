@@ -49,12 +49,12 @@ class Frascos:
     
             quebrou = False
             
-            print("tamanho de pedaco " + str(self.tamanho_de_pedaco))
+            #print("tamanho de pedaco " + str(self.tamanho_de_pedaco))
             if (i == self.garrafas - 1) and (self.altura_inicial + self.quantidade_de_pedacos_corrigidos >= self.altura):
                 self.quantidade_de_pedacos_corrigidos += self.resto
             for qual_pedaco in range(self.quantidade_de_pedacos_corrigidos):
                 altura_de_teste = round(self.altura_inicial) + round(self.tamanho_de_pedaco) * qual_pedaco
-                print("altura_de_teste " + str(altura_de_teste))
+                #print("altura_de_teste " + str(altura_de_teste))
                 if self.e_ai_quebrou(altura_de_teste):
                     quebrou = True
                     if (i == self.garrafas - 1):
@@ -66,7 +66,6 @@ class Frascos:
                     self.escolher_pedaco_como_conjunto_de_alturas_de_teste(qual_pedaco)
                     
     def e_ai_quebrou(self, onde_deixaram_cair):
-        print(onde_deixaram_cair)
         if (self.onde_quebra <= onde_deixaram_cair):
             return True
         else: return False
@@ -77,6 +76,6 @@ class Frascos:
     def escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco):
         self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco + 1)
         self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * qual_pedaco
-        print("Qual pedaco" + str(qual_pedaco))
-        print("Altura inicial = " + str(self.altura_inicial))
-        print("Altura final = " + str(self.altura_final))
+        #print("Qual pedaco" + str(qual_pedaco))
+        #print("Altura inicial = " + str(self.altura_inicial))
+        #print("Altura final = " + str(self.altura_final))
