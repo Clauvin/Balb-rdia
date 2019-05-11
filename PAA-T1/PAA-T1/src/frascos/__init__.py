@@ -27,17 +27,15 @@ class Frascos:
         
     def calcular_quantidade_de_pedacos(self):
         quantidade_de_pedacos = math.pow(self.altura, 1/self.garrafas)
-        print(quantidade_de_pedacos)
+        #print(quantidade_de_pedacos)
         return quantidade_de_pedacos
     
     def calcular_resto(self):
         self.quantidade_de_pedacos_corrigidos = math.floor(self.quantidade_de_pedacos)
-        if (self.quantidade_de_pedacos_corrigidos == 1):
-            self.quantidade_de_pedacos_corrigidos = 2
         self.altura_corrigida = pow(self.quantidade_de_pedacos_corrigidos, self.garrafas)
         self.resto = self.altura - self.altura_corrigida
         self.tamanho_de_pedaco = self.altura_corrigida
-        print(self.resto)
+        #print(self.resto)
         
     def variaveis_tem_valores_corretos(self, altura, garrafas, onde_quebra):
         if ((altura <= 0) or (garrafas <= 0) or (onde_quebra <= 0)):
@@ -81,6 +79,6 @@ class Frascos:
     def escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco):
         self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco)
         self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco - 1)
-        print("Qual pedaco" + str(qual_pedaco))
-        print("Altura inicial = " + str(self.altura_inicial))
-        print("Altura final = " + str(self.altura_final))
+        #print("Qual pedaco" + str(qual_pedaco))
+        #print("Altura inicial = " + str(self.altura_inicial))
+        #print("Altura final = " + str(self.altura_final))
