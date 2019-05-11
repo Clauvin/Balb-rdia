@@ -76,6 +76,6 @@ class Frascos:
     def escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco):
         self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco)
         self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco - 1)
-        print("Qual pedaco" + str(qual_pedaco))
-        print("Altura inicial = " + str(self.altura_inicial))
-        print("Altura final = " + str(self.altura_final))
+        #print("Qual pedaco" + str(qual_pedaco))
+        #print("Altura inicial = " + str(self.altura_inicial))
+        #print("Altura final = " + str(self.altura_final))
