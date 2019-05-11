@@ -60,7 +60,7 @@ class Frascos:
                 #print("altura_de_teste " + str(altura_de_teste))
                 if self.e_ai_quebrou(altura_de_teste):
                     quebrou = True
-                    if (i == self.garrafas - 1):
+                    if (i == self.garrafas - 1) or (altura_de_teste == 1):
                         return self.o_resultado_e(qual_pedaco)
                     self.escolher_pedaco_como_conjunto_de_alturas_de_teste(qual_pedaco)
                     break
