@@ -1,6 +1,6 @@
 import math
 
-class Frascos:
+class FrascosDoisPontoDois:
     
     altura = 0
     altura_corrigida = 0
@@ -48,21 +48,29 @@ class Frascos:
         
     def descobrir_onde_quebra(self):
         for i in range(self.garrafas):
+            print ("Garrafa " + str(i + 1))
             self.tamanho_de_pedaco /= self.quantidade_de_pedacos_corrigidos
+            print ("Tamanho do pedaco = " + str(self.tamanho_de_pedaco))
     
             quebrou = False
             
-            #print("tamanho de pedaco " + str(self.tamanho_de_pedaco))
+            print("tamanho de pedaco " + str(self.tamanho_de_pedaco))
             if (i == self.garrafas - 1) and (self.altura_inicial + self.quantidade_de_pedacos_corrigidos >= self.altura):
                 self.quantidade_de_pedacos_corrigidos += self.resto
+            elif (i == self.garrafas - 1):
+                self.quantidade_de_pedacos_corrigidos += 1
             for qual_pedaco in range(self.quantidade_de_pedacos_corrigidos):
                 altura_de_teste = round(self.altura_inicial) + round(self.tamanho_de_pedaco) * qual_pedaco
                 #print("altura_de_teste " + str(altura_de_teste))
                 if self.e_ai_quebrou(altura_de_teste):
+                    
                     quebrou = True
+                    
                     if (i == self.garrafas - 1) or (altura_de_teste == 1):
                         return self.o_resultado_e(qual_pedaco)
+  
                     self.escolher_pedaco_como_conjunto_de_alturas_de_teste(qual_pedaco)
+                    
                     break
 
                 if (qual_pedaco == self.quantidade_de_pedacos_corrigidos - 1) and (quebrou == False):
@@ -79,6 +87,6 @@ class Frascos:
     def escolher_pedaco_como_conjunto_de_alturas_de_teste(self, qual_pedaco):
         self.altura_final = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco)
         self.altura_inicial = self.altura_inicial + self.tamanho_de_pedaco * (qual_pedaco - 1)
-        print("Qual pedaco" + str(qual_pedaco))
-        print("Altura inicial = " + str(self.altura_inicial))
-        print("Altura final = " + str(self.altura_final))
+        print("Qual pedaco = " + str(qual_pedaco))
+        print("Proxima altura inicial = " + str(self.altura_inicial))
+        print("Proxima altura final = " + str(self.altura_final))
