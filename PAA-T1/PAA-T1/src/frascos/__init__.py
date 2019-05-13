@@ -131,7 +131,6 @@ class Frascos22Melhorado:
         
     def calcular_quantidade_de_pedacos(self):
         quantidade_de_pedacos = math.pow(self.altura, 1/self.garrafas)
-        print(quantidade_de_pedacos)
         return quantidade_de_pedacos
     
     def calcular_resto(self):
@@ -141,7 +140,6 @@ class Frascos22Melhorado:
         self.tamanho_de_pedaco = self.altura_corrigida
             
     def iteracao_para_descobrir_onde_quebra(self):
-        print ("Testando uma de " + str(self.garrafas) + " garrafas.")
         self.tamanho_de_pedaco /= self.quantidade_de_pedacos
     
         quebrou = False
@@ -154,10 +152,7 @@ class Frascos22Melhorado:
         qual_pedaco = 0
         
         for qual_pedaco in range(quantidade_real_de_pedacos):
-            print("For " + str(qual_pedaco))
             altura_de_teste = round(self.altura_minima) + round(self.tamanho_de_pedaco) * qual_pedaco
-            
-            print("alt_de_teste = " + str(altura_de_teste))
             
             if self.e_ai_quebrou(altura_de_teste):
                     
