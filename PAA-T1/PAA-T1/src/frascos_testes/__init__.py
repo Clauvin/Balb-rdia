@@ -46,3 +46,17 @@ import frascos
 teste_vn_correto_1 = frascos.Frascos22Melhorado(1, 100, 2, 53)
 resultado_vn_correto_1 = teste_vn_correto_1.iteracao_para_descobrir_onde_quebra()
 print("Resultado do teste_vn_correto_1: " + str(resultado_vn_correto_1))
+
+teste_vn_quebrado_em_altura = frascos.Frascos22Melhorado(-100, -50, 2, 53)
+
+teste_vn_quebrado_em_garrafas = frascos.Frascos22Melhorado(1, 100, -2, 53)
+
+teste_vn_quebrado_em_onde_quebra = frascos.Frascos22Melhorado(1, 100, 2, -53)
+
+teste_vn_correto_2 = frascos.Frascos22Melhorado(1, 1000, 3, 245)
+resultado_vn_correto_2 = teste_vn_correto_2.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_vn_correto_2: " + str(resultado_vn_correto_2))
+
+teste_vn_correto_3 = frascos.Frascos22Melhorado(1, 1001, 3, 1001)
+resultado_vn_correto_3 = teste_vn_correto_3.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_vn_correto_3: " + str(resultado_vn_correto_3))
