@@ -120,7 +120,7 @@ class Frascos22Melhorado:
         if ((altura_minima <= 0) or (altura_maxima <= 0) or
              (garrafas <= 0) or (onde_quebra <= 0)):
             if (altura_minima <= 0): print ("Ei, voce esta passando altura_minima <= 0, ela precisa ser positiva.")
-            if (altura_maxima <= 0): print ("Ei, voce esta passando altura_minima <= 0, ela precisa ser positiva.")
+            if (altura_maxima <= 0): print ("Ei, voce esta passando altura_maxima <= 0, ela precisa ser positiva.")
             if (garrafas <= 0): print ("Precisamos de uma garrafa no minimo pra testar...")
             if (onde_quebra <= 0): print ("Entao a garrafa nao aguenta existir...")
             return True
