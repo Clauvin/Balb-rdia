@@ -1,5 +1,4 @@
 import frascos
-from test.support import _1M
 
 if False:
 
@@ -85,7 +84,8 @@ if True:
     teste_vn_correto_9 = frascos.Frascos22Melhorado(1, 100567, 4, 100001)
     resultado_vn_correto_9 = teste_vn_correto_9.iteracao_para_descobrir_onde_quebra()
     print("Resultado do teste_correto_9: " + str(resultado_vn_correto_9))
-    
+ 
+if False:
     teste_vn_correto_9 = frascos.Frascos22Melhorado(1, 5000000, 40000, 442524)
     resultado_vn_correto_9 = teste_vn_correto_9.iteracao_para_descobrir_onde_quebra()
     print("Resultado do teste_correto_9: " + str(resultado_vn_correto_9))
