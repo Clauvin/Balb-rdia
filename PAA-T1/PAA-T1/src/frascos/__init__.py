@@ -147,13 +147,13 @@ class Frascos22Melhorado:
 
         if (self.resto > 0):
             quantidade_real_de_pedacos += 1
-
+            
         altura_de_teste = 0
         qual_pedaco = 0
         
         for qual_pedaco in range(quantidade_real_de_pedacos):
             altura_de_teste = round(self.altura_minima) + round(self.tamanho_de_pedaco) * qual_pedaco
-            
+                   
             if self.e_ai_quebrou(altura_de_teste):
                     
                 quebrou = True
@@ -163,14 +163,20 @@ class Frascos22Melhorado:
                     return result
             
                 break
-            
+        
         if (self.garrafas == 1):
             return "Garrafa aguentou todas as quedas"
     
         else:
-            nova_altura_minima = altura_de_teste - round(self.tamanho_de_pedaco)
-            nova_altura_maxima = altura_de_teste
-            novas_garrafas = self.garrafas - 1
+            if (quebrou == True):
+                nova_altura_minima = altura_de_teste - round(self.tamanho_de_pedaco)
+                nova_altura_maxima = altura_de_teste
+                novas_garrafas = self.garrafas - 1
+                
+            else:
+                nova_altura_minima = altura_de_teste
+                nova_altura_maxima = self.altura_maxima
+                novas_garrafas = self.garrafas - 1
             
             return self.criar_novo_teste(nova_altura_minima, nova_altura_maxima, 
                              novas_garrafas, self.onde_quebra)
