@@ -196,3 +196,75 @@ class Frascos22Melhorado:
                                          novas_garrafas, onde_quebra)
         if (novo_teste != None):
             return novo_teste.iteracao_para_descobrir_onde_quebra()
+
+"""
+3.3:
+
+FrascosDoisPontoDois foi feita para inicialmente resolver a 3.1 e então a 3.2...
+...mas ao ver que a forma que eu escolhi para lidar com o problema do resto
+não funcionou bem, fiz o Frascos 2 2 Melhorado.
+
+O código dessa classe funciona muito bem para o problema... exceto quando
+são tantas garrafas que o algoritmo tenta checar TODAS as alturas, em ordem
+crescente.
+
+Não resolvi esse problema porquê ele faz ponte para o problema da 3.3
+
+Percebe-se na 3.2 que com o teto da complexidade igual a k * n ^ (1/k),
+quanto maior o k, mais rápido é o algoritmo...
+
+...até que  n ^ (1/k) (que representa a quantidade de testes a se fazer em
+cada iteração do código seja igual ou menor que um.
+
+Ou seja, chega um ponto em que a quantidade de garrafas é mais um empecilho que uma
+vantagem. Tendo isso em mente, qual a menor complexidade assintótica?
+
+Bom, temos duas situações que limitam o algoritmo.
+
+1 - Uma onde temos uma garrafa apenas, então precisamos testar todas as alturas
+em ordem crescente, ou seja, k = 1 e O(n)
+
+2 - Uma onde temos tantas garrafas que n ^ (1/k) = 1 (porquê não temos como
+fazer menos que um teste de cada vez) e O(k).
+
+Então se queremos um algoritmo mais rápido, precisamos que ele seja mais rápido
+que um algoritmo linear.
+
+Em O(k * n ^ (1/k)), k é uma constante, então temos O(n^(1/k)). Como reduzir
+ao máximo O(n^(1/k)) sem cair em algo linear?
+
+Se n^(1/k) não pode ser igual a 1, e se ele for igual a 2? Notar que nesse caso
+k terá que ser grande o suficiente para que a raiz k-ésima reduza n para um valor
+o mais próximo possível de 2...
+
+...ou melhor. 2 aqui quer dizer temos dois testes por iteração, ou seja, o
+equivalente a uma busca binária: dado um conjunto linear de alturas, fazemos 
+um teste com uma garrafa no começo desse conjunto.
+
+Se a garrafa quebrar, ótimo, se não, quebramos a garrafa no meio do conjunto.
+Se a garrafa quebrar, pegamos o subconjunto da metade menor do conjunto e
+fazemos o teste acima nesse subconjunto. Caso contrário, pegamos o subconjunto da
+metade maior do conjunto.
+
+Repetimos o processo até acharmos um conjunto de duas alturas, onde uma das duas
+quebrará a garrafa e com isso teremos o limite procurado.
+
+Esse processo tem a complexidade de O(log n), n sendo o número de alturas, e com
+log2 n sendo o número de garrafas.
+
+Ou seja, com digamos, n = 100, log2 n = 6.64 (arredondaremos para 7):
+
+Teste 1 = Conjunto de 100 garrafas.
+Teste 2 = Conjunto de 50 garrafas.
+Teste 3 = Conjunto de 25 garrafas.
+Teste 4 = Conjunto de 12 garrafas.
+Teste 5 = Conjunto de 6 garrafas.
+Teste 6 = Conjunto de 3 garrafas.
+Teste 7 = Conjunto de 2 garrafas. <- Nesse caso, talvez não precisemos
+                                    do sétimo teste MAS considerando o pior
+                                    dos casos, vamos ficar com o sétimo teste.
+
+Fica a pergunta: se existem testes melhores que a busca binária eles podem ser
+aplicados a esse problema?  
+
+"""
