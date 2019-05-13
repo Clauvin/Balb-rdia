@@ -1,4 +1,5 @@
 import frascos
+from test.support import _1M
 
 #teste_correto = frascos.FrascosDoisPontoDois(100, 2, 53)
 #resultado_correto = teste_correto.descobrir_onde_quebra()
@@ -60,3 +61,23 @@ print("Resultado do teste_vn_correto_2: " + str(resultado_vn_correto_2))
 teste_vn_correto_3 = frascos.Frascos22Melhorado(1, 1001, 3, 1001)
 resultado_vn_correto_3 = teste_vn_correto_3.iteracao_para_descobrir_onde_quebra()
 print("Resultado do teste_vn_correto_3: " + str(resultado_vn_correto_3))
+
+teste_vn_correto_4 = frascos.Frascos22Melhorado(1, 1001, 15, 1)
+resultado_vn_correto_4 = teste_vn_correto_4.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_vn_correto_4: " + str(resultado_vn_correto_4))
+
+teste_vn_correto_6 = frascos.Frascos22Melhorado(1, 1001, 8, 5)
+resultado_vn_correto_6 = teste_vn_correto_6.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_correto_6: " + str(resultado_vn_correto_6))
+
+teste_vn_correto_7 = frascos.Frascos22Melhorado(1, 1001, 2, 1)
+resultado_vn_correto_7 = teste_vn_correto_7.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_correto_7: " + str(resultado_vn_correto_7))
+
+teste_vn_correto_8 = frascos.Frascos22Melhorado(1, 1500, 3, 457)
+resultado_vn_correto_8 = teste_vn_correto_8.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_correto_8: " + str(resultado_vn_correto_8))
+
+teste_vn_correto_9 = frascos.Frascos22Melhorado(1, 100567, 4, 100001)
+resultado_vn_correto_9 = teste_vn_correto_9.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_correto_9: " + str(resultado_vn_correto_9))
