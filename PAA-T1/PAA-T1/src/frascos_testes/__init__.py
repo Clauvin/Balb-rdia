@@ -39,6 +39,10 @@ import frascos
 #resultado_correto_8 = teste_correto_8.descobrir_onde_quebra()
 #print("Resultado do teste_correto_8: " + str(resultado_correto_8))
 
-teste_correto_9 = frascos.FrascosDoisPontoDois(100567, 4, 100001)
-resultado_correto_9 = teste_correto_9.descobrir_onde_quebra()
-print("Resultado do teste_correto_9: " + str(resultado_correto_9))
+#teste_correto_9 = frascos.FrascosDoisPontoDois(100567, 4, 100001)
+#resultado_correto_9 = teste_correto_9.descobrir_onde_quebra()
+#print("Resultado do teste_correto_9: " + str(resultado_correto_9))
+
+teste_vn_correto_1 = frascos.Frascos22Melhorado(1, 100, 2, 53)
+resultado_vn_correto_1 = teste_vn_correto_1.iteracao_para_descobrir_onde_quebra()
+print("Resultado do teste_vn_correto_1: " + str(resultado_vn_correto_1))
