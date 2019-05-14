@@ -264,7 +264,21 @@ Teste 7 = Conjunto de 2 garrafas. <- Nesse caso, talvez não precisemos
                                     do sétimo teste MAS considerando o pior
                                     dos casos, vamos ficar com o sétimo teste.
 
-Fica a pergunta: se existem testes melhores que a busca binária eles podem ser
-aplicados a esse problema?  
+Fica a pergunta: existem testes melhores que a busca binária eles podem ser
+aplicados a esse problema?
+
+Busca exponencial - começa testando valores iguais a potências crescentes de 2 até
+achar um valor menor que o valor buscado, então passa para busca binária.
+    - Esse é bom só se o número procurado (no nosso caso a altura) estiver perto
+        do começo dos números a serem testados.
+    - Isso leva a um bom fator de comparação: um algoritmo melhor que o de busca
+        binária precisa ser capaz de cortar mais que a metade do conjunto de teste
+        a cada iteração.
+        
+O problema é: sem NADA que dê uma direção melhor para cortes fora da metade, temos
+como nos aproveitar de testes iniciais fora da metade do conjunto para sermos mais
+rápidos que O(log2 n)?
+
+
 
 """
