@@ -1,6 +1,6 @@
 import math
 
-class FrascosDoisPontoDois:
+class FrascosTresPontoDois:
     
     altura = 0
     altura_corrigida = 0
@@ -91,7 +91,7 @@ class FrascosDoisPontoDois:
         print("Proxima altura inicial = " + str(self.altura_inicial))
         print("Proxima altura final = " + str(self.altura_final))
         
-class Frascos22Melhorado:
+class Frascos32Melhorado:
     
     altura_minima = 0
     altura_maxima = 0
@@ -192,7 +192,7 @@ class Frascos22Melhorado:
 
     def criar_novo_teste(self, nova_altura_minima, nova_altura_maxima, 
                              novas_garrafas, onde_quebra):
-        novo_teste = Frascos22Melhorado(nova_altura_minima, nova_altura_maxima,
+        novo_teste = Frascos32Melhorado(nova_altura_minima, nova_altura_maxima,
                                          novas_garrafas, onde_quebra)
         if (novo_teste != None):
             return novo_teste.iteracao_para_descobrir_onde_quebra()
@@ -200,7 +200,7 @@ class Frascos22Melhorado:
 """
 3.3:
 
-FrascosDoisPontoDois foi feita para inicialmente resolver a 3.1 e então a 3.2...
+FrascosTresPontoDois foi feita para inicialmente resolver a 3.1 e então a 3.2...
 ...mas ao ver que a forma que eu escolhi para lidar com o problema do resto
 não funcionou bem, fiz o Frascos 2 2 Melhorado.
 
@@ -279,6 +279,29 @@ O problema é: sem NADA que dê uma direção melhor para cortes fora da metade, tem
 como nos aproveitar de testes iniciais fora da metade do conjunto para sermos mais
 rápidos que O(log2 n)?
 
+Uma boa hipótese é conseguir que esse teste consiga cortar uma iteração extra,
+ou seja, o chute precisa ser de forma que 75% do conjunto seja retirado nesse teste.
 
+O problema é que um erro nisso faz com que só 25% do conjunto seja retirado, o
+que faz que o teste seguinte tenha 25% a mais de valores.
+
+Supondo o exemplo do erro acima:
+
+Teste 1 = Conjunto de 100 garrafas.
+Teste 2 = Conjunto de 75 garrafas.
+Teste 3 = Conjunto de 57 garrafas.
+Teste 4 = Conjunto de 43 garrafas.
+Teste 5 = Conjunto de 33 garrafas.
+Teste 6 = Conjunto de 25 garrafas.
+...
+
+Na pior das hipóteses, levamos o dobro da quantidade de testes para chegar a
+25 garrafas.
+
+Como a única pista plausível é, em caso de múltiplos cortes repetidos do primeiro
+ou segundo subconjunto, checar se um corte maior faz resultado, isso vale como opção
+ativável ou não,
+mas não como norma.
 
 """
+
