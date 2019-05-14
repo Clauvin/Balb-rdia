@@ -305,3 +305,57 @@ mas não como norma.
 
 """
 
+class Frascos33NaoBinario:
+    
+    altura_minima = 0
+    altura_maxima = 0
+    altura = 0
+    garrafas = 0
+    onde_quebra = 0
+    vale_a_pena_o_chute = False
+    
+    def __init__(self, altura_minima, altura_maxima, garrafas, onde_quebra,
+                vale_a_pena_o_chute):
+                
+        self.altura_minima = altura_minima
+        self.altura_maxima = altura_maxima
+        self.altura = altura_maxima - altura_minima + 1
+        self.garrafas = garrafas
+        self.onde_quebra = onde_quebra
+        self.vale_a_pena_o_chute = vale_a_pena_o_chute
+        
+    def variaveis_tem_valores_corretos(self, altura_minima, altura_maxima,
+                                        garrafas, onde_quebra):
+        
+        if ((altura_minima <= 0) or (altura_maxima <= 0) or (garrafas < 0)
+            or (onde_quebra < 0)):
+            
+            if (altura_minima <= 0):
+                print ("Ei, voce esta passando altura_minima <= 0, ela precisa ser positiva.")
+            if (altura_maxima <= 0): 
+                print ("Ei, voce esta passando altura_maxima <= 0, ela precisa ser positiva.")
+            if (garrafas <= 0): 
+                print ("Precisamos de uma garrafa no minimo pra testar...")
+            if (onde_quebra <= 0): 
+                print ("Entao a garrafa nao aguenta existir...")
+            if (altura_maxima - altura_minima < 0): 
+                print ("Ei, a sua regua aponta para baixo.")
+            return True
+ 
+        return False
+    
+    def iteracao_de_onde_quebra(self):
+        
+        return 
+        
+    def o_chute(self):
+        
+        return
+    
+    def criar_novo_teste(self):
+        
+        return
+        
+        
+    
+class Frascos33BinarioComOpcaoDeChute:
