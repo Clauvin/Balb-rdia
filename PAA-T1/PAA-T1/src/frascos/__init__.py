@@ -197,9 +197,6 @@ class Frascos32Melhorado:
         if (novo_teste != None):
             return novo_teste.iteracao_para_descobrir_onde_quebra()
 
-
-
-
 class Frascos33NaoBinario:
     
     altura_minima = 0
@@ -218,7 +215,7 @@ class Frascos33NaoBinario:
                 
         self.altura_minima = altura_minima
         self.altura_maxima = altura_maxima
-        self.altura = altura_maxima - altura_minima + 1
+        self.altura = altura_maxima - altura_minima
         self.garrafas = garrafas
         self.onde_quebra = onde_quebra
         self.escolhas_sequenciais_esquerda = escolhas_sequenciais_esquerda
@@ -247,15 +244,21 @@ class Frascos33NaoBinario:
     
     def iteracao_de_onde_quebra(self):
         
-        self.ponto_do_meio = self.altura_minima + self.altura/2 + self.altura%2
-        
+        self.ponto_do_meio = self.altura_minima + math.floor(self.altura/2)
+        self.ponto_do_meio = math.floor(self.ponto_do_meio)
+
+        #print (str(self.altura_minima) + " " +
+        #        str(self.ponto_do_meio) + " " + str(self.altura_maxima))
+       
         quebrou = self.e_ai_quebrou(self.ponto_do_meio)
+ 
+
         
-        if (self.altura == 2):
-            if (quebrou): return self.altura_minima + self.altura/2
-            else: return self.altura_minima
+        if (self.altura == 1):
+            if (quebrou): return self.altura_minima
+            else: return self.altura_minima + 1
         
-        print (self.ponto_do_meio)
+
         nova_iteracao = self.criar_novo_teste(quebrou)
       
         return nova_iteracao.iteracao_de_onde_quebra()
