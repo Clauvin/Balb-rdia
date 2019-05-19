@@ -244,7 +244,6 @@ class Frascos33NaoBinario:
             self.escolhas_sequenciais_esquerda = 0
             self.ponto_do_meio = self.altura_minima + math.floor(self.altura/4)
             self.ponto_do_meio = math.floor(self.ponto_do_meio)
-            
         elif (self.escolhas_sequenciais_direita == 3) and (self.chute_ativado):
             self.escolhas_sequenciais_direita = 0
             self.ponto_do_meio = self.altura_minima + math.floor(3*self.altura/4)
@@ -254,8 +253,6 @@ class Frascos33NaoBinario:
             self.ponto_do_meio = math.floor(self.ponto_do_meio)
        
         quebrou = self.e_ai_quebrou(self.ponto_do_meio)
- 
-
         
         if (self.altura == 1):
             if (quebrou): return self.altura_minima
