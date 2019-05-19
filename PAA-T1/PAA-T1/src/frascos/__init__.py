@@ -202,38 +202,34 @@ class Frascos33NaoBinario:
     altura_minima = 0
     altura_maxima = 0
     altura = 0
-    garrafas = 0
     onde_quebra = 0
     escolhas_sequenciais_esquerda = 0
     escolhas_sequenciais_direita = 0
     chute_ativado = False
     ponto_do_meio = 0
     
-    def __init__(self, altura_minima, altura_maxima, garrafas, onde_quebra,
+    def __init__(self, altura_minima, altura_maxima, onde_quebra,
                 escolhas_sequenciais_esquerda,
                 escolhas_sequenciais_direita, chute_ativado):
                 
         self.altura_minima = altura_minima
         self.altura_maxima = altura_maxima
         self.altura = altura_maxima - altura_minima
-        self.garrafas = garrafas
         self.onde_quebra = onde_quebra
         self.escolhas_sequenciais_esquerda = escolhas_sequenciais_esquerda
         self.escolhas_sequenciais_direita = escolhas_sequenciais_direita
         self.chute_ativado = chute_ativado
         
     def variaveis_tem_valores_corretos(self, altura_minima, altura_maxima,
-                                        garrafas, onde_quebra):
+                                        onde_quebra):
         
-        if ((altura_minima <= 0) or (altura_maxima <= 0) or (garrafas < 0)
+        if ((altura_minima <= 0) or (altura_maxima <= 0)
             or (onde_quebra < 0)):
             
             if (altura_minima <= 0):
                 print ("Ei, voce esta passando altura_minima <= 0, ela precisa ser positiva.")
             if (altura_maxima <= 0): 
                 print ("Ei, voce esta passando altura_maxima <= 0, ela precisa ser positiva.")
-            if (garrafas <= 0): 
-                print ("Precisamos de uma garrafa no minimo pra testar...")
             if (onde_quebra <= 0): 
                 print ("Entao a garrafa nao aguenta existir...")
             if (altura_maxima - altura_minima < 0): 
@@ -246,9 +242,6 @@ class Frascos33NaoBinario:
         
         self.ponto_do_meio = self.altura_minima + math.floor(self.altura/2)
         self.ponto_do_meio = math.floor(self.ponto_do_meio)
-
-        #print (str(self.altura_minima) + " " +
-        #        str(self.ponto_do_meio) + " " + str(self.altura_maxima))
        
         quebrou = self.e_ai_quebrou(self.ponto_do_meio)
  
@@ -279,7 +272,7 @@ class Frascos33NaoBinario:
             self.escolhas_sequenciais_esquerda += 1
             
             nova_iteracao = Frascos33NaoBinario(
-                self.altura_minima, self.ponto_do_meio, self.garrafas-1, 
+                self.altura_minima, self.ponto_do_meio,
                 self.onde_quebra, self.escolhas_sequenciais_esquerda, 
                 self.escolhas_sequenciais_direita, self.chute_ativado)
                 
@@ -287,7 +280,7 @@ class Frascos33NaoBinario:
             self.escolhas_sequenciais_direita += 1
             
             nova_iteracao = Frascos33NaoBinario(
-                self.ponto_do_meio, self.altura_maxima, self.garrafas-1, 
+                self.ponto_do_meio, self.altura_maxima,
                 self.onde_quebra, self.escolhas_sequenciais_esquerda, 
                 self.escolhas_sequenciais_direita, self.chute_ativado)       
         
