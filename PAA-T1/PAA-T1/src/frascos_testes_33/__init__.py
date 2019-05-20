@@ -38,10 +38,11 @@ if testar_leitura_de_dados:
     leitor.open_file()
     leitor.copy_text()
     leitor.close_file()
+    leitor.adjust_file_characters()
     
-    print("ei")
     print(leitor.file_characters[0])
     print(leitor.file_characters[1])
+    print(leitor.file_characters[2])
 
 
         
