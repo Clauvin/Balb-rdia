@@ -1,6 +1,6 @@
 import math
 
-class FrascosDoisPontoDois:
+class FrascosTresPontoDois:
     
     altura = 0
     altura_corrigida = 0
@@ -91,7 +91,7 @@ class FrascosDoisPontoDois:
         print("Proxima altura inicial = " + str(self.altura_inicial))
         print("Proxima altura final = " + str(self.altura_final))
         
-class Frascos22Melhorado:
+class Frascos32Melhorado:
     
     altura_minima = 0
     altura_maxima = 0
@@ -192,7 +192,103 @@ class Frascos22Melhorado:
 
     def criar_novo_teste(self, nova_altura_minima, nova_altura_maxima, 
                              novas_garrafas, onde_quebra):
-        novo_teste = Frascos22Melhorado(nova_altura_minima, nova_altura_maxima,
+        novo_teste = Frascos32Melhorado(nova_altura_minima, nova_altura_maxima,
                                          novas_garrafas, onde_quebra)
         if (novo_teste != None):
             return novo_teste.iteracao_para_descobrir_onde_quebra()
+
+class Frascos33:
+    
+    altura_minima = 0
+    altura_maxima = 0
+    altura = 0
+    onde_quebra = 0
+    escolhas_sequenciais_esquerda = 0
+    escolhas_sequenciais_direita = 0
+    chute_ativado = False
+    ponto_do_meio = 0
+    
+    def __init__(self, altura_minima, altura_maxima, onde_quebra,
+                escolhas_sequenciais_esquerda,
+                escolhas_sequenciais_direita, chute_ativado):
+                
+        self.altura_minima = altura_minima
+        self.altura_maxima = altura_maxima
+        self.altura = altura_maxima - altura_minima
+        self.onde_quebra = onde_quebra
+        self.escolhas_sequenciais_esquerda = escolhas_sequenciais_esquerda
+        self.escolhas_sequenciais_direita = escolhas_sequenciais_direita
+        self.chute_ativado = chute_ativado
+        
+    def variaveis_tem_valores_corretos(self, altura_minima, altura_maxima,
+                                        onde_quebra):
+        
+        if ((altura_minima <= 0) or (altura_maxima <= 0)
+            or (onde_quebra < 0)):
+            
+            if (altura_minima <= 0):
+                print ("Ei, voce esta passando altura_minima <= 0, ela precisa ser positiva.")
+            if (altura_maxima <= 0): 
+                print ("Ei, voce esta passando altura_maxima <= 0, ela precisa ser positiva.")
+            if (onde_quebra <= 0): 
+                print ("Entao a garrafa nao aguenta existir...")
+            if (altura_maxima - altura_minima < 0): 
+                print ("Ei, a sua regua aponta para baixo.")
+            return True
+ 
+        return False
+    
+    def iteracao_de_onde_quebra(self):
+        
+        if (self.escolhas_sequenciais_esquerda == 3) and (self.chute_ativado):
+            self.escolhas_sequenciais_esquerda = 0
+            self.ponto_do_meio = self.altura_minima + math.floor(self.altura/4)
+            self.ponto_do_meio = math.floor(self.ponto_do_meio)
+        elif (self.escolhas_sequenciais_direita == 3) and (self.chute_ativado):
+            self.escolhas_sequenciais_direita = 0
+            self.ponto_do_meio = self.altura_minima + math.floor(3*self.altura/4)
+            self.ponto_do_meio = math.floor(self.ponto_do_meio)
+        else:
+            self.ponto_do_meio = self.altura_minima + math.floor(self.altura/2)
+            self.ponto_do_meio = math.floor(self.ponto_do_meio)
+       
+        quebrou = self.e_ai_quebrou(self.ponto_do_meio)
+        
+        if (self.altura == 1):
+            if (quebrou): return self.altura_minima
+            else: return self.altura_minima + 1
+        
+
+        nova_iteracao = self.criar_novo_teste(quebrou)
+      
+        return nova_iteracao.iteracao_de_onde_quebra()
+    
+    def e_ai_quebrou(self, onde_deixaram_cair):
+        if (self.onde_quebra <= onde_deixaram_cair):
+            return True
+        else: return False
+        
+        
+    def o_chute(self):
+        
+        return
+    
+    def criar_novo_teste(self, quebrou):
+        
+        if (quebrou):
+            self.escolhas_sequenciais_esquerda += 1
+            
+            nova_iteracao = Frascos33(
+                self.altura_minima, self.ponto_do_meio,
+                self.onde_quebra, self.escolhas_sequenciais_esquerda, 
+                self.escolhas_sequenciais_direita, self.chute_ativado)
+                
+        else:
+            self.escolhas_sequenciais_direita += 1
+            
+            nova_iteracao = Frascos33(
+                self.ponto_do_meio, self.altura_maxima,
+                self.onde_quebra, self.escolhas_sequenciais_esquerda, 
+                self.escolhas_sequenciais_direita, self.chute_ativado)       
+        
+        return nova_iteracao

@@ -1,0 +1,43 @@
+Sobre 3.3, versão binária
+
+Tendo os arquivos com números de n bits, são necessárias algumas perguntas:
+
+* O que é melhor: trabalhar com os números como se fossem uma string, ou achar
+um big int para python?
+
+Bom, suponhamos que usaremos os números como uma string. Peguemos como exemplo
+uma altura de tamanho 32 e quebra 6.
+
+Ou seja, altura 100000 e quebra 110.
+
+Como fazer os testes nessas circunstâncias? Bom, começamos escolhendo uma altura
+do meio entre 000001 (1) e 100000 (32). Ela seria 10000 (16). Como 16 quebra
+a garrafa, então a nova altura máxima é 10000.
+
+No teste seguinte temos a altura do meio = 1000. Ela quebra a garrafa, então a
+nova altura máxima é 1000.
+
+No teste seguinte temos 100 como altura do meio que não quebra a garrafa.
+Então altura mínima = 100 e altura máxima = 1000. A altura do meio é
+110, que quebra a garrafa. Então temos
+
+altura mínima = 100 e altura máxima = 110. Entre 100 e 110 temos 101, que não quebra -
+
+enfim, parece algo fácil de executar mas nesse caso os números sao redondos,
+binariamente falando. Então...
+
+Altura 11010101 (213) e quebra 11001000 (200).
+
+Altura do meio = 1101010 (107), não quebra, altura minima = 1101010
+Altura do meio = 11010101 - 1101010...
+
+...na prática, o maior problema aqui em deixar como binário mesmo são as subtrações.
+
+A outra opção é achar big int para Python. Vejamos.
+
+Ok, longs são big int.
+Então a saída para fazer isso rápido é fazer um conversor de binário para long e
+então resolver o problema via long. Na hora de imprimir o resultado, convertemos de
+long pra binário.
+
+Se der tempo eu tento via adição, subtração e divisão de binário.

@@ -5,4 +5,8 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
 <path>C:\GitHub for WebGL\Balb-rdia\PAA-T1\PAA-T1\src</path>
 </pydev_pathproperty>
+<pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
+<path>/${PROJECT_DIR_NAME}/frascos_testes_33</path>
+<path>/${PROJECT_DIR_NAME}/leitura_de_arquivos</path>
+</pydev_pathproperty>
 </pydev_project>

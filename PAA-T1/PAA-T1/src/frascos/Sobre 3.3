@@ -1,0 +1,104 @@
+3.3:
+
+FrascosTresPontoDois foi feita para inicialmente resolver a 3.1 e então a 3.2...
+...mas ao ver que a forma que eu escolhi para lidar com o problema do resto
+não funcionou bem, fiz o Frascos 2 2 Melhorado.
+
+O código dessa classe funciona muito bem para o problema... exceto quando
+são tantas garrafas que o algoritmo tenta checar TODAS as alturas, em ordem
+crescente.
+
+Não resolvi esse problema porquê ele faz ponte para o problema da 3.3
+
+Percebe-se na 3.2 que com o teto da complexidade igual a k * n ^ (1/k),
+quanto maior o k, mais rápido é o algoritmo...
+
+...até que  n ^ (1/k) (que representa a quantidade de testes a se fazer em
+cada iteração do código seja igual ou menor que um.
+
+Ou seja, chega um ponto em que a quantidade de garrafas é mais um empecilho que uma
+vantagem. Tendo isso em mente, qual a menor complexidade assintótica?
+
+Bom, temos duas situações que limitam o algoritmo.
+
+1 - Uma onde temos uma garrafa apenas, então precisamos testar todas as alturas
+em ordem crescente, ou seja, k = 1 e O(n)
+
+2 - Uma onde temos tantas garrafas que n ^ (1/k) = 1 (porquê não temos como
+fazer menos que um teste de cada vez) e O(k).
+
+Então se queremos um algoritmo mais rápido, precisamos que ele seja mais rápido
+que um algoritmo linear.
+
+Em O(k * n ^ (1/k)), k é uma constante, então temos O(n^(1/k)). Como reduzir
+ao máximo O(n^(1/k)) sem cair em algo linear?
+
+Se n^(1/k) não pode ser igual a 1, e se ele for igual a 2? Notar que nesse caso
+k terá que ser grande o suficiente para que a raiz k-ésima reduza n para um valor
+o mais próximo possível de 2...
+
+...ou melhor. 2 aqui quer dizer temos dois testes por iteração, ou seja, o
+equivalente a uma busca binária: dado um conjunto linear de alturas, fazemos 
+um teste com uma garrafa no começo desse conjunto.
+
+Se a garrafa quebrar, ótimo, se não, quebramos a garrafa no meio do conjunto.
+Se a garrafa quebrar, pegamos o subconjunto da metade menor do conjunto e
+fazemos o teste acima nesse subconjunto. Caso contrário, pegamos o subconjunto da
+metade maior do conjunto.
+
+Repetimos o processo até acharmos um conjunto de duas alturas, onde uma das duas
+quebrará a garrafa e com isso teremos o limite procurado.
+
+Esse processo tem a complexidade de O(log n), n sendo o número de alturas, e com
+log2 n sendo o número de garrafas.
+
+Ou seja, com digamos, n = 100, log2 n = 6.64 (arredondaremos para 7):
+
+Teste 1 = Conjunto de 100 garrafas.
+Teste 2 = Conjunto de 50 garrafas.
+Teste 3 = Conjunto de 25 garrafas.
+Teste 4 = Conjunto de 12 garrafas.
+Teste 5 = Conjunto de 6 garrafas.
+Teste 6 = Conjunto de 3 garrafas.
+Teste 7 = Conjunto de 2 garrafas. <- Nesse caso, talvez não precisemos
+                                    do sétimo teste MAS considerando o pior
+                                    dos casos, vamos ficar com o sétimo teste.
+
+Fica a pergunta: existem testes melhores que a busca binária eles podem ser
+aplicados a esse problema?
+
+Busca exponencial - começa testando valores iguais a potências crescentes de 2 até
+achar um valor menor que o valor buscado, então passa para busca binária.
+    - Esse é bom só se o número procurado (no nosso caso a altura) estiver perto
+        do começo dos números a serem testados.
+    - Isso leva a um bom fator de comparação: um algoritmo melhor que o de busca
+        binária precisa ser capaz de cortar mais que a metade do conjunto de teste
+        a cada iteração.
+        
+O problema é: sem NADA que dê uma direção melhor para cortes fora da metade, temos
+como nos aproveitar de testes iniciais fora da metade do conjunto para sermos mais
+rápidos que O(log2 n)?
+
+Uma boa hipótese é conseguir que esse teste consiga cortar uma iteração extra,
+ou seja, o chute precisa ser de forma que 75% do conjunto seja retirado nesse teste.
+
+O problema é que um erro nisso faz com que só 25% do conjunto seja retirado, o
+que faz que o teste seguinte tenha 25% a mais de valores.
+
+Supondo o exemplo do erro acima:
+
+Teste 1 = Conjunto de 100 garrafas.
+Teste 2 = Conjunto de 75 garrafas.
+Teste 3 = Conjunto de 57 garrafas.
+Teste 4 = Conjunto de 43 garrafas.
+Teste 5 = Conjunto de 33 garrafas.
+Teste 6 = Conjunto de 25 garrafas.
+...
+
+Na pior das hipóteses, levamos o dobro da quantidade de testes para chegar a
+25 garrafas.
+
+Como a única pista plausível é, em caso de múltiplos cortes repetidos do primeiro
+ou segundo subconjunto, checar se um corte maior faz resultado, isso vale como opção
+ativável ou não,
+mas não como norma.
