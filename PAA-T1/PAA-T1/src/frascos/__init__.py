@@ -165,7 +165,8 @@ class Frascos32Melhorado:
                 break
         
         if (self.garrafas == 1):
-            return "Garrafa aguentou todas as quedas"
+            debugging = "Garrafa aguentou todas as quedas - " + str(altura_de_teste)
+            return debugging
     
         else:
             if (quebrou == True):
