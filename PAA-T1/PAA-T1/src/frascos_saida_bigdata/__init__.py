@@ -20,6 +20,7 @@ def roda_teste_sob_arquivo(entrada):
     conversor_arquivos = None
     conversor_arquivos = Conversor_Arquivos(entrada)
     conversor_arquivos.guardar_binarios()
+    teste_garrafas = None
     for altura_quebra in conversor_arquivos.get_conjunto_de_inteiros():
         teste_garrafas = Frascos33(1, conversor_arquivos.altura_maxima,
                                     altura_quebra, 0, 0, False)

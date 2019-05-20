@@ -34,6 +34,7 @@ class Conversor_Arquivos:
         quantity = int(divided_first_line[1])
         counter = 1
         
+        self.conjunto_de_inteiros = []
         for counter in range(counter, quantity+1):
             self.conjunto_de_inteiros.append(
                 self.string_binary_to_long(file_characters[counter]))
