@@ -19,4 +19,10 @@ class LeitorDeDadosDoPoggi:
     def close_file(self):
         self.file.close()
         
-    
+    def adjust_file_characters(self):
+        new_file_characters = []
+        
+        for line in self.file_characters:
+            new_file_characters.append(line.strip())
+        
+        self.file_characters = new_file_characters
