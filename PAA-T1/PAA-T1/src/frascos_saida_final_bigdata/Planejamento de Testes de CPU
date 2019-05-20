@@ -1,0 +1,10 @@
+Instâncias a serem usadas para teste:
+1, 2, 4, 8, 16, 32, 64, 128, 256 bits
+
+Frascos:
+1, bits/2(se não der um teste por altura), suficiente para teste binário.
+
+Códigos a testar:
+* Teste de O(raiz de n)
+* Teste de 3.2Melhorado
+* Teste de 3.3 
