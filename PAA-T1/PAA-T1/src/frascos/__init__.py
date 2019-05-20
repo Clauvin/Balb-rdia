@@ -197,7 +197,7 @@ class Frascos32Melhorado:
         if (novo_teste != None):
             return novo_teste.iteracao_para_descobrir_onde_quebra()
 
-class Frascos33NaoBinario:
+class Frascos33:
     
     altura_minima = 0
     altura_maxima = 0
@@ -278,7 +278,7 @@ class Frascos33NaoBinario:
         if (quebrou):
             self.escolhas_sequenciais_esquerda += 1
             
-            nova_iteracao = Frascos33NaoBinario(
+            nova_iteracao = Frascos33(
                 self.altura_minima, self.ponto_do_meio,
                 self.onde_quebra, self.escolhas_sequenciais_esquerda, 
                 self.escolhas_sequenciais_direita, self.chute_ativado)
@@ -286,13 +286,9 @@ class Frascos33NaoBinario:
         else:
             self.escolhas_sequenciais_direita += 1
             
-            nova_iteracao = Frascos33NaoBinario(
+            nova_iteracao = Frascos33(
                 self.ponto_do_meio, self.altura_maxima,
                 self.onde_quebra, self.escolhas_sequenciais_esquerda, 
                 self.escolhas_sequenciais_direita, self.chute_ativado)       
         
         return nova_iteracao
-        
-        
-    
-#class Frascos33BinarioComOpcaoDeChute:
