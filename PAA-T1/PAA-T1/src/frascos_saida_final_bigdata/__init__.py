@@ -1,6 +1,7 @@
 import random
 import math
 import cpuTimer
+from conversor_poggi import Conversor_Arquivos
 from frascos import Frascos32Melhorado, Frascos33
 
 conjunto_de_instancias = []
@@ -37,6 +38,9 @@ def criar_conjunto_de_frascos():
         valores_de_frascos.append(infinitos_frascos)
  
 def testar_velocidade():
+    criar_conjunto_de_instancias()
+    criar_conjunto_de_frascos()
+    
     posicao_bits = 0
     posicao_frascos = 0
     teste_de_n_frascos = None
@@ -138,10 +142,107 @@ def testar_velocidade():
 def tempo_usado(timer):
     print ("Tempo usado em ms = " + str(timer.get_time("last", "ms")))       
         
-criar_conjunto_de_instancias()
-criar_conjunto_de_frascos()
+bignum_32_01 = True
+bignum_32_02 = True
+bignum_64_01 = True
+bignum_64_02 = True
+bignum_128_01 = True
+bignum_128_02 = True
+bignum_192_01 = True
+bignum_192_02 = True
+bignum_256_01 = True
+bignum_256_02 = True
 
-print(valores_de_bits)
-print(valores_de_frascos)
+conversor_arquivos = None
+teste_garrafas = None 
 
-testar_velocidade()
+def roda_teste_sob_arquivo_32(entrada, garrafas):
+    timer = cpuTimer.CPUTimer(0)
+    conversor_arquivos = None
+    conversor_arquivos = Conversor_Arquivos(entrada)
+    conversor_arquivos.guardar_binarios()
+    teste_garrafas = None
+    
+    tempo_total = 0
+    iteracoes = 0
+    while tempo_total < 5000:
+        timer.start()
+        for altura_quebra in conversor_arquivos.get_conjunto_de_inteiros():
+            teste_garrafas = Frascos32Melhorado(1,
+                           conversor_arquivos.altura_maxima, garrafas, altura_quebra)
+            result = teste_garrafas.iteracao_para_descobrir_onde_quebra()
+        timer.stop()
+        tempo_total += timer.get_time("last", "ms")
+        iteracoes += 1
+    print ("Media = " + str(tempo_total/iteracoes)) 
+
+def roda_teste_sob_arquivo_33(entrada):
+    conversor_arquivos = None
+    conversor_arquivos = Conversor_Arquivos(entrada)
+    conversor_arquivos.guardar_binarios()
+    teste_garrafas = None
+    for altura_quebra in conversor_arquivos.get_conjunto_de_inteiros():
+        teste_garrafas = Frascos33(1, conversor_arquivos.altura_maxima,
+                                    altura_quebra, 0, 0, False)
+        result = teste_garrafas.iteracao_de_onde_quebra() 
+
+if bignum_32_01:
+    print("bignum_32_01")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_32_01.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_32_01.dat", 32)
+    print("-------------------")
+    
+if bignum_32_02:
+    print("bignum_32_02")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_32_02.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_32_02.dat", 32)
+    print("-------------------")
+
+if bignum_64_01:
+    print("bignum_64_01")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_64_01.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_64_01.dat", 32)
+    print("-------------------")
+    
+if bignum_64_02:
+    print("bignum_64_02")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_64_02.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_64_02.dat", 32)
+    print("-------------------")
+    
+if bignum_128_01:
+    print("bignum_128_01")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_128_01.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_128_01.dat", 32)
+    print("-------------------")
+    
+if bignum_128_02:
+    print("bignum_128_02")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_128_02.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_128_02.dat", 32)
+    print("-------------------")
+    
+if bignum_192_01:
+    print("bignum_192_01")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_01.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_01.dat", 32)
+    print("-------------------")
+    
+if bignum_192_02:
+    print("bignum_192_02")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_02.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_02.dat", 32)
+    print("-------------------")
+    
+if bignum_256_01:
+    print("bignum_256_01")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_256_01.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_256_01.dat", 32)
+    print("-------------------")
+    
+if bignum_256_02:
+    print("bignum_256_02")
+    roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_256_02.dat", 2)
+    #roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_256_02.dat", 32)
+    print("-------------------")
+    
