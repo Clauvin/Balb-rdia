@@ -16,6 +16,8 @@ tantas vezes quantas forem
 necess´arias para que o tempo ultrapasse 5 s (fa¸ca um while), conte quantas
 foram as execu¸c~oes e reporte a m´edia.
 
+Não faz sentido o parágrafo acima porquê CPUTimer também conta milissegundos.
+
 • Obrigatoriamente apresente tabelas contendo tr^es de colunas para cada algoritmo
  aplicado `as inst^ancias, uma com o valor da complexidade te´orica, uma com o tempo
  de CPU utilizado e uma com a raz~ao destes dois valores. Cada linha da tabela ´e
