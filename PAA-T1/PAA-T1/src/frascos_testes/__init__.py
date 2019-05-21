@@ -90,7 +90,6 @@ if False:
     resultado_vn_correto_9 = teste_vn_correto_9.iteracao_para_descobrir_onde_quebra()
     print("Resultado do teste_correto_9: " + str(resultado_vn_correto_9))
     
-for i in range(60000,62000):
-    teste_final = frascos.Frascos32Melhorado(32768, 65536, 1, i)
-    resultado_final = teste_final.iteracao_para_descobrir_onde_quebra()
-    print("Resultado final = " + str(resultado_final))
+teste_final = frascos.Frascos32Melhorado(1, 115792089237316195423570985008687907853269984665640564039457584007913129639935, 1, 100000000)
+resultado_final = teste_final.iteracao_para_descobrir_onde_quebra()
+print("Resultado final = " + str(resultado_final))
