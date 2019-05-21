@@ -50,31 +50,34 @@ def testar_velocidade():
         
         timer.reset()
         
-        print ("Teste de um frasco - " + str(altura_bits) + 
-               " bits, quebra em 1, altura maxima = " + str(altura) + 
-               ", frascos = " + str(valores_de_frascos[i*4]))
-        timer.start()
-        menor_valor_um_frasco = Frascos32Melhorado(1, altura,
-                                     valores_de_frascos[i*4], valores_de_bits[i*2])
-        timer.stop()
-        tempo_usado(timer)
+        #print ("Teste de um frasco - " + str(altura_bits) + 
+        #       " bits, quebra em 1, altura maxima = " + str(altura) + 
+        #       ", frascos = " + str(valores_de_frascos[i*4]))
+        #timer.start()
+        #menor_valor_um_frasco = Frascos32Melhorado(1, altura,
+        #                             valores_de_frascos[i*4], valores_de_bits[i*2])
+        #menor_valor_um_frasco.iteracao_para_descobrir_onde_quebra()
+        #timer.stop()
+        #tempo_usado(timer)
         
-        print ("Teste de dois frascos - " + str(altura_bits) + 
-               " bits, quebra em 1, altura maxima = " + str(altura) + 
-               ", frascos = " + str(valores_de_frascos[i*4+1]))
-        timer.start()
-        menor_valor_dois_frascos = Frascos32Melhorado(1, pow(2,lista_de_bits[i])-1,
-                                     valores_de_frascos[i*4+1], valores_de_bits[i*2])
-        timer.stop()
-        tempo_usado(timer)
+        #print ("Teste de dois frascos - " + str(altura_bits) + 
+        #       " bits, quebra em 1, altura maxima = " + str(altura) + 
+        #       ", frascos = " + str(valores_de_frascos[i*4+1]))
+        #timer.start()
+        #menor_valor_dois_frascos = Frascos32Melhorado(1, altura,
+        #                             valores_de_frascos[i*4+1], valores_de_bits[i*2])
+        #menor_valor_dois_frascos.iteracao_para_descobrir_onde_quebra()
+        #timer.stop()
+        #tempo_usado(timer)
         
         print ("Teste de " + str(valores_de_frascos[i*4+2]) +
                  " frascos - " + str(altura_bits) + 
                  " bits, quebra em 1, altura maxima = " + str(altura) + 
                  ", frascos = " + str(valores_de_frascos[i*4+2]))
         timer.start()
-        menor_valor_bits_frascos = Frascos32Melhorado(1, pow(2,lista_de_bits[i])-1,
+        menor_valor_bits_frascos = Frascos32Melhorado(1, altura,
                                      valores_de_frascos[i*4+2], valores_de_bits[i*2])
+        menor_valor_bits_frascos.iteracao_para_descobrir_onde_quebra()
         timer.stop()
         tempo_usado(timer)
         
@@ -82,30 +85,33 @@ def testar_velocidade():
         print ("Teste de infinitos frascos - " + str(altura_bits) + 
                  " bits, quebra em 1, altura maxima = " + str(altura))
         timer.start()
-        menor_valor_infinitos_frascos = Frascos33(1, pow(2,lista_de_bits[i])-1,
+        menor_valor_infinitos_frascos = Frascos33(1, altura,
                                              valores_de_frascos[i*4+3], 0, 0, False)
+        menor_valor_infinitos_frascos.iteracao_de_onde_quebra()
         timer.stop()
         tempo_usado(timer)
 
-        print ("Teste de um frasco - " + str(altura_bits) + 
-               " bits, quebra em " + str(valores_de_bits[i*2+1]) +
-               ", altura maxima = " + str(altura) + 
-               ", frascos = " + str(valores_de_frascos[i*4]))
-        timer.start()
-        random_valor_um_frasco = Frascos32Melhorado(1, pow(2,lista_de_bits[i])-1,
-                                     valores_de_frascos[i*4], valores_de_bits[i*2+1])
-        timer.stop()
-        tempo_usado(timer)
+        #print ("Teste de um frasco - " + str(altura_bits) + 
+        #       " bits, quebra em " + str(valores_de_bits[i*2+1]) +
+        #       ", altura maxima = " + str(altura) + 
+        #       ", frascos = " + str(valores_de_frascos[i*4]))
+        #timer.start()
+        #random_valor_um_frasco = Frascos32Melhorado(1, altura,
+        #                             valores_de_frascos[i*4], valores_de_bits[i*2+1])
+        #random_valor_um_frasco.iteracao_para_descobrir_onde_quebra()
+        #timer.stop()
+        #tempo_usado(timer)
         
-        print ("Teste de dois frascos - " + str(altura_bits) + 
-               " bits, quebra em " + str(valores_de_bits[i*2+1]) +
-               ", altura maxima = " + str(altura) + 
-               ", frascos = " + str(valores_de_frascos[i*4]))
-        timer.start()
-        random_valor_dois_frascos = Frascos32Melhorado(1, pow(2,lista_de_bits[i])-1,
-                                     valores_de_frascos[i*4+1], valores_de_bits[i*2+1])
-        timer.stop()
-        tempo_usado(timer)
+        #print ("Teste de dois frascos - " + str(altura_bits) + 
+        #       " bits, quebra em " + str(valores_de_bits[i*2+1]) +
+        #       ", altura maxima = " + str(altura) + 
+        #       ", frascos = " + str(valores_de_frascos[i*4]))
+        #timer.start()
+        #random_valor_dois_frascos = Frascos32Melhorado(1, altura,
+        #                             valores_de_frascos[i*4+1], valores_de_bits[i*2+1])
+        #random_valor_dois_frascos.iteracao_para_descobrir_onde_quebra()
+        #timer.stop()
+        #tempo_usado(timer)
         
         print ("Teste de " + str(valores_de_frascos[i*4+2]) +
                  " frascos - " + str(altura_bits) + 
@@ -113,8 +119,9 @@ def testar_velocidade():
                  ", altura maxima = " + str(altura) + 
                  ", frascos = " + str(valores_de_frascos[i*4+2]))
         timer.start()
-        random_valor_bits_frascos = Frascos32Melhorado(1, pow(2,lista_de_bits[i])-1,
+        random_valor_bits_frascos = Frascos32Melhorado(1, altura,
                                      valores_de_frascos[i*4+2], valores_de_bits[i*2+1])
+        random_valor_bits_frascos.iteracao_para_descobrir_onde_quebra()        
         timer.stop()
         tempo_usado(timer)
         
@@ -122,8 +129,9 @@ def testar_velocidade():
                  " bits, quebra em " + str(valores_de_bits[i*2+1]) +
                  ", altura maxima = " + str(altura))
         timer.start()
-        random_valor_infinitos_frascos = Frascos33(1, pow(2,lista_de_bits[i])-1,
+        random_valor_infinitos_frascos = Frascos33(1, altura,
                                              valores_de_bits[i*2+1], 0, 0, False)
+        random_valor_infinitos_frascos.iteracao_de_onde_quebra()
         timer.stop()
         tempo_usado(timer)
         
@@ -132,5 +140,8 @@ def tempo_usado(timer):
         
 criar_conjunto_de_instancias()
 criar_conjunto_de_frascos()
+
+print(valores_de_bits)
+print(valores_de_frascos)
 
 testar_velocidade()
