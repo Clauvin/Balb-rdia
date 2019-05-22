@@ -12,9 +12,9 @@ frascos - codigo das classes que fazem o teste dos frascos.
 	
 frascos_entradas_bigdata - Guarda os arquivos do Poggi de 32 a 256 bits de entrada.
 
-frascos_teste_saida_bigdata - Testes de Frascos33 usando arquivos do Poggi.
+frascos_saida__bigdata - Contem codigo de testes para tabela de velocidade.
 
-frascos_saida_final_bigdata - Contem codigo de testes para tabela de velocidade.
+frascos_teste_saida_bigdata - Testes de Frascos33 usando arquivos do Poggi.
 
 frascos_testes - Testes de FrascosTresPontoDois e Frascos32Melhorado
 
