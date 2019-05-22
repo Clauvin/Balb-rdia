@@ -216,6 +216,8 @@ def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela):
             tempo_total += timer.get_time("last", "ms")
             iteracoes += 1
         
+        tempo_de_cpu = tempo_total / iteracoes
+        
         content.append([qual_algoritmo, qual_arquivo, qual_instancia_em_decimal,
                         qual_instancia_em_binario, quantos_frascos, 
                         complexidade_teorica, tempo_de_cpu, razao])
