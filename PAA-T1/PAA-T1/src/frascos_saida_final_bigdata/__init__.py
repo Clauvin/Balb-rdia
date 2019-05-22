@@ -3,6 +3,8 @@ import math
 import cpuTimer
 from conversor_poggi import Conversor_Arquivos
 from frascos import Frascos32Melhorado, Frascos33
+import teste_escritor_ods
+from teste_escritor_ods import save_new_sheet
 
 conjunto_de_instancias = []
 instancia = []
@@ -142,16 +144,16 @@ def testar_velocidade():
 def tempo_usado(timer):
     print ("Tempo usado em ms = " + str(timer.get_time("last", "ms")))       
         
-bignum_32_01 = True
-bignum_32_02 = True
-bignum_64_01 = True
-bignum_64_02 = True
-bignum_128_01 = True
-bignum_128_02 = True
-bignum_192_01 = True
-bignum_192_02 = True
-bignum_256_01 = True
-bignum_256_02 = True
+bignum_32_01 = False
+bignum_32_02 = False
+bignum_64_01 = False
+bignum_64_02 = False
+bignum_128_01 = False
+bignum_128_02 = False
+bignum_192_01 = False
+bignum_192_02 = False
+bignum_256_01 = False
+bignum_256_02 = False
 
 conversor_arquivos = None
 teste_garrafas = None 
@@ -176,15 +178,53 @@ def roda_teste_sob_arquivo_32(entrada, garrafas):
         iteracoes += 1
     print ("Media = " + str(tempo_total/iteracoes)) 
 
-def roda_teste_sob_arquivo_33(entrada):
+def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela):
     conversor_arquivos = None
     conversor_arquivos = Conversor_Arquivos(entrada)
     conversor_arquivos.guardar_binarios()
     teste_garrafas = None
+    
+    timer = cpuTimer.CPUTimer(0)
+    
+    qual_algoritmo = "Frascos33"
+    qual_arquivo = nome_do_arquivo_para_tabela
+    qual_instancia_em_decimal = None
+    qual_instancia_em_binario = None
+    quantos_frascos = "infinitos"
+    complexidade_teorica = 0
+    tempo_de_cpu = 0
+    razao = 0
+    
+    content = []
+    
     for altura_quebra in conversor_arquivos.get_conjunto_de_inteiros():
-        teste_garrafas = Frascos33(1, conversor_arquivos.altura_maxima,
-                                    altura_quebra, 0, 0, False)
-        result = teste_garrafas.iteracao_de_onde_quebra() 
+        print("Indo")
+        tempo_total = 0
+        iteracoes = 0
+        qual_instancia_em_decimal = bin(altura_quebra)
+        qual_instancia_em_binario = altura_quebra
+
+        
+        iteracoes = 0
+        
+        while (tempo_total < 5000):
+            timer.start()
+            teste_garrafas = Frascos33(1, conversor_arquivos.altura_maxima,
+                                        altura_quebra, 0, 0, False)
+            result = teste_garrafas.iteracao_de_onde_quebra()
+            timer.stop()
+            tempo_total += timer.get_time("last", "ms")
+            iteracoes += 1
+        
+        content.append([qual_algoritmo, qual_arquivo, qual_instancia_em_decimal,
+                        qual_instancia_em_binario, quantos_frascos, 
+                        complexidade_teorica, tempo_de_cpu, razao])
+        
+    save_new_sheet(nome_do_arquivo_para_tabela, "Teste 1", content)
+         
+            
+roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_32_01.dat",
+                          "Teste.ods")
 
 if bignum_32_01:
     print("bignum_32_01")
