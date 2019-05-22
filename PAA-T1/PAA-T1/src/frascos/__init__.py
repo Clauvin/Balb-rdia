@@ -172,12 +172,12 @@ class Frascos32Melhorado:
             if (quebrou == True):
                 nova_altura_minima = altura_de_teste - round(self.tamanho_de_pedaco)
                 nova_altura_maxima = altura_de_teste
-                novas_garrafas = self.garrafas - 1
                 
             else:
                 nova_altura_minima = altura_de_teste
                 nova_altura_maxima = self.altura_maxima
-                novas_garrafas = self.garrafas - 1
+            
+            novas_garrafas = self.garrafas - 1
             
             return self.criar_novo_teste(nova_altura_minima, nova_altura_maxima, 
                              novas_garrafas, self.onde_quebra)
