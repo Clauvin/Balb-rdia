@@ -6,7 +6,8 @@ from collections import OrderedDict
 def save_new_sheet(name_file, sheet_name, content):
     data = OrderedDict()
     
-    first_line_sheet = ["Qual algoritmo", "Qual arquivo", "Qual instancia",
+    first_line_sheet = ["Qual algoritmo", "Qual arquivo", "Qual instancia decimal",
+                        "Qual instancia binaria",
                         "Quantos frascos", "Complexidade Teorica",
                         "Tempo de CPU (ms)", "Razao"]
     
