@@ -1,0 +1,4 @@
+Sobre pastas:
+
+conversor_poggi - Contem o leitor dos arquivos do Poggi pra questao 3
+cpuTimer - Contem a classe cpuTimer do Poggi para cronometrar tempo
