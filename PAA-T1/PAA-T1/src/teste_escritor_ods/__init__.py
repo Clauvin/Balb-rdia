@@ -6,8 +6,8 @@ from collections import OrderedDict
 def save_new_sheet(name_file, sheet_name, content):
     data = OrderedDict()
     
-    first_line_sheet = ["Qual algoritmo", "Qual arquivo", "Qual instancia decimal",
-                        "Qual instancia binaria",
+    first_line_sheet = ["Qual algoritmo", "Qual arquivo", "Qual instancia binaria",
+                        "Qual instancia decimal",
                         "Quantos frascos", "Complexidade Teorica",
                         "Tempo de CPU (ms)", "Razao"]
     
@@ -20,5 +20,3 @@ def save_new_sheet(name_file, sheet_name, content):
     data.update({sheet_name: final_data})
     
     save_data(name_file, data)
-
-save_new_sheet("test.ods", "Sheet 1", [[1, 2, 3], [4, 5, 6]])
