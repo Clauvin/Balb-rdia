@@ -178,7 +178,8 @@ def roda_teste_sob_arquivo_32(entrada, garrafas):
         iteracoes += 1
     print ("Media = " + str(tempo_total/iteracoes)) 
 
-def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela):
+def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela,
+                              complexidade_teorica):
     conversor_arquivos = None
     conversor_arquivos = Conversor_Arquivos(entrada)
     conversor_arquivos.guardar_binarios()
@@ -191,7 +192,6 @@ def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela):
     qual_instancia_em_decimal = None
     qual_instancia_em_binario = None
     quantos_frascos = "infinitos"
-    complexidade_teorica = 0
     tempo_de_cpu = 0
     razao = 0
     
@@ -201,8 +201,8 @@ def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela):
         print("Indo")
         tempo_total = 0
         iteracoes = 0
-        qual_instancia_em_decimal = bin(altura_quebra)
-        qual_instancia_em_binario = altura_quebra
+        qual_instancia_em_binario = str(altura_quebra)
+        qual_instancia_em_decimal = str(bin(altura_quebra))
 
         
         iteracoes = 0
@@ -217,16 +217,39 @@ def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela):
             iteracoes += 1
         
         tempo_de_cpu = tempo_total / iteracoes
+        razao = complexidade_teorica / tempo_de_cpu
         
-        content.append([qual_algoritmo, qual_arquivo, qual_instancia_em_decimal,
-                        qual_instancia_em_binario, quantos_frascos, 
+        content.append([qual_algoritmo, qual_arquivo, qual_instancia_em_binario,
+                        qual_instancia_em_decimal, quantos_frascos, 
                         complexidade_teorica, tempo_de_cpu, razao])
         
     save_new_sheet(nome_do_arquivo_para_tabela, "Teste 1", content)
          
             
-roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_32_01.dat",
-                          "Teste.ods")
+roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_64_01.dat",
+                          "Teste2.ods", 64)
+
+if False:
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_64_02.dat",
+                              "Teste3.ods", 64)
+    
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_128_01.dat",
+                              "Teste4.ods", 128)
+    
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_128_02.dat",
+                              "Teste5.ods", 128)
+    
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_192_01.dat",
+                              "Teste6.ods", 192)
+    
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_192_02.dat",
+                              "Teste7.ods", 192)
+    
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_256_01.dat",
+                              "Teste8.ods", 256)
+    
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_256_01.dat",
+                              "Teste9.ods", 256)
 
 if bignum_32_01:
     print("bignum_32_01")
