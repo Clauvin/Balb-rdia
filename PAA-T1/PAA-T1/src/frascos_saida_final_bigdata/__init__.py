@@ -158,25 +158,53 @@ bignum_256_02 = False
 conversor_arquivos = None
 teste_garrafas = None 
 
-def roda_teste_sob_arquivo_32(entrada, garrafas):
+def roda_teste_sob_arquivo_32(entrada, nome_do_arquivo_para_tabela,
+                              complexidade_teorica, garrafas):
     timer = cpuTimer.CPUTimer(0)
     conversor_arquivos = None
     conversor_arquivos = Conversor_Arquivos(entrada)
     conversor_arquivos.guardar_binarios()
     teste_garrafas = None
     
-    tempo_total = 0
-    iteracoes = 0
-    while tempo_total < 5000:
-        timer.start()
-        for altura_quebra in conversor_arquivos.get_conjunto_de_inteiros():
+    qual_algoritmo = "Frascos32Melhorado"
+    qual_arquivo = ""
+    qual_instancia_em_decimal = None
+    qual_instancia_em_binario = None
+    quantos_frascos = garrafas
+    tempo_de_cpu = 0
+    razao = 0  
+    
+    content = []
+     
+    for altura_quebra in conversor_arquivos.get_conjunto_de_inteiros():
+        
+        print("Indo")
+        
+        tempo_total = 0
+        iteracoes = 0
+        
+        qual_instancia_em_binario = str(bin(altura_quebra))
+        qual_instancia_em_decimal = str(altura_quebra)
+        
+        while tempo_total < 5000:
+            
+            timer.start()
             teste_garrafas = Frascos32Melhorado(1,
                            conversor_arquivos.altura_maxima, garrafas, altura_quebra)
             result = teste_garrafas.iteracao_para_descobrir_onde_quebra()
-        timer.stop()
-        tempo_total += timer.get_time("last", "ms")
-        iteracoes += 1
-    print ("Media = " + str(tempo_total/iteracoes)) 
+            timer.stop()
+            
+            tempo_total += timer.get_time("last", "ms")
+            iteracoes += 1
+            
+        tempo_de_cpu = tempo_total / iteracoes
+        razao = complexidade_teorica / tempo_de_cpu
+            
+        content.append([qual_algoritmo, qual_arquivo, qual_instancia_em_binario,
+                        qual_instancia_em_decimal, quantos_frascos, 
+                        complexidade_teorica, tempo_de_cpu, razao])
+        
+    save_new_sheet(nome_do_arquivo_para_tabela, "Teste 1", content)
 
 def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela,
                               complexidade_teorica):
@@ -198,7 +226,8 @@ def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela,
     content = []
     
     for altura_quebra in conversor_arquivos.get_conjunto_de_inteiros():
-        print("Indo")
+        print("Vai")
+        
         tempo_total = 0
         iteracoes = 0
         qual_instancia_em_binario = str(bin(altura_quebra))
@@ -225,6 +254,17 @@ def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela,
         
     save_new_sheet(nome_do_arquivo_para_tabela, "Teste 1", content)
 
+print("Rezar")
+
+roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_256_01.dat",
+                          "Teste novo.ods", 0, 128)
+
+roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_01.dat",
+                          "Teste novo 192 2.ods", 0, 128)
+
+roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_02.dat",
+                          "Teste novo 192 1.ods", 0, 128)
+
 if False:
     
     roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_64_01.dat",
@@ -238,20 +278,7 @@ if False:
     
     roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_128_02.dat",
                               "Teste5.ods", 128)
-    
-    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_192_01.dat",
-                              "Teste6.ods", 192)
 
-    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_192_02.dat",
-                              "Teste7.ods", 192)
-    
-    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_256_01.dat",
-                              "Teste8.ods", 256)
-    
-    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_256_01.dat",
-                              "Teste9.ods", 256)
-    
-    
     roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_192_01.dat",
                                   "Teste6.ods", 192)
     
@@ -261,7 +288,7 @@ if False:
     roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_256_01.dat",
                                   "Teste8.ods", 256)
         
-    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_256_01.dat",
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_256_02.dat",
                                   "Teste9.ods", 256)
 
 if bignum_32_01:
