@@ -1,0 +1,110 @@
+Resultados dos testes da questão 3:
+
+Teste de um frasco - 2 bits, quebra em 1, altura maxima = 3, frascos = 1
+Tempo usado em ms = 0.142836737608913
+Teste de dois frascos - 2 bits, quebra em 1, altura maxima = 3, frascos = 2
+Tempo usado em ms = 0.05602279229571138
+Teste de 2 frascos - 2 bits, quebra em 1, altura maxima = 3, frascos = 2
+Tempo usado em ms = 0.047897349138318064
+Teste de infinitos frascos - 2 bits, quebra em 1, altura maxima = 3
+Tempo usado em ms = 0.04746969423529747
+Teste de um frasco - 2 bits, quebra em 1, altura maxima = 3, frascos = 1
+Tempo usado em ms = 0.043193145205090426
+Teste de dois frascos - 2 bits, quebra em 1, altura maxima = 3, frascos = 1
+Tempo usado em ms = 0.0256592941812419
+Teste de 2 frascos - 2 bits, quebra em 1, altura maxima = 3, frascos = 2
+Tempo usado em ms = 0.022665709860096864
+Teste de infinitos frascos - 2 bits, quebra em 1, altura maxima = 3
+Tempo usado em ms = 0.026086949084262387
+Teste de um frasco - 4 bits, quebra em 1, altura maxima = 15, frascos = 1
+Tempo usado em ms = 0.026514603987283197
+Teste de dois frascos - 4 bits, quebra em 1, altura maxima = 15, frascos = 2
+Tempo usado em ms = 0.03677832165977987
+Teste de 4 frascos - 4 bits, quebra em 1, altura maxima = 15, frascos = 4
+Tempo usado em ms = 0.04362080010811113
+Teste de infinitos frascos - 4 bits, quebra em 1, altura maxima = 15
+Tempo usado em ms = 0.07483960802862197
+Teste de um frasco - 4 bits, quebra em 14, altura maxima = 15, frascos = 1
+Tempo usado em ms = 0.14240908270589228
+Teste de dois frascos - 4 bits, quebra em 14, altura maxima = 15, frascos = 1
+Tempo usado em ms = 0.12487523168204398
+Teste de 4 frascos - 4 bits, quebra em 14, altura maxima = 15, frascos = 4
+Tempo usado em ms = 0.19885952990462452
+Teste de infinitos frascos - 4 bits, quebra em 14, altura maxima = 15
+Tempo usado em ms = 0.09579469827663634
+Teste de um frasco - 8 bits, quebra em 1, altura maxima = 255, frascos = 1
+Tempo usado em ms = 0.06885243938633233
+Teste de dois frascos - 8 bits, quebra em 1, altura maxima = 255, frascos = 2
+Tempo usado em ms = 0.029935843211448612
+Teste de 8 frascos - 8 bits, quebra em 1, altura maxima = 255, frascos = 8
+Tempo usado em ms = 0.02394867456915941
+Teste de infinitos frascos - 8 bits, quebra em 1, altura maxima = 255
+Tempo usado em ms = 0.07398429822258035
+Teste de um frasco - 8 bits, quebra em 249, altura maxima = 255, frascos = 1
+Tempo usado em ms = 0.806984802000056
+Teste de dois frascos - 8 bits, quebra em 249, altura maxima = 255, frascos = 1
+Tempo usado em ms = 0.16250886314786525
+Teste de 8 frascos - 8 bits, quebra em 249, altura maxima = 255, frascos = 8
+Tempo usado em ms = 0.2009978044197275
+Teste de infinitos frascos - 8 bits, quebra em 249, altura maxima = 255
+Tempo usado em ms = 0.08553098060413988
+Teste de um frasco - 16 bits, quebra em 1, altura maxima = 65535, frascos = 1
+Tempo usado em ms = 0.027797568696345636
+Teste de dois frascos - 16 bits, quebra em 1, altura maxima = 65535, frascos = 2
+Tempo usado em ms = 0.03592301185373868
+Teste de 16 frascos - 16 bits, quebra em 1, altura maxima = 65535, frascos = 16
+Tempo usado em ms = 0.026086949084262387
+Teste de infinitos frascos - 16 bits, quebra em 1, altura maxima = 65535
+Tempo usado em ms = 0.13856018857870583
+Teste de um frasco - 16 bits, quebra em 58905, altura maxima = 65535, frascos = 1
+Tempo usado em ms = 193.76102815081168
+Teste de dois frascos - 16 bits, quebra em 58905, altura maxima = 65535, frascos = 1
+Tempo usado em ms = 1.9009260439269982
+Teste de 16 frascos - 16 bits, quebra em 58905, altura maxima = 65535, frascos = 16
+Tempo usado em ms = 0.4336420716629652
+Teste de infinitos frascos - 16 bits, quebra em 58905, altura maxima = 65535
+Tempo usado em ms = 0.3874553421367444
+Teste de um frasco - 32 bits, quebra em 1, altura maxima = 4294967295, frascos = 1
+Tempo usado em ms = 0.1616535533418237
+Teste de dois frascos - 32 bits, quebra em 1, altura maxima = 4294967295, frascos = 2
+Tempo usado em ms = 0.07526726293164278
+Teste de 32 frascos - 32 bits, quebra em 1, altura maxima = 4294967295, frascos = 32
+Tempo usado em ms = 0.07655022764070489
+Teste de infinitos frascos - 32 bits, quebra em 1, altura maxima = 4294967295
+Tempo usado em ms = 0.8112613510302633
+Teste de um frasco - 32 bits, quebra em 3776569816, altura maxima = 4294967295, frascos = 1
+58 minutos sem resposta. Por conta disso, testes futuros de um frasco estão cancelados.
+Testes de dois frascos idem.
+
+Teste de 32 frascos - 32 bits, quebra em 1, altura maxima = 4294967295, frascos = 32
+Tempo usado em ms = 0.12059868265183672
+Teste de infinitos frascos - 32 bits, quebra em 1, altura maxima = 4294967295
+Tempo usado em ms = 0.6064146524833492
+Teste de 32 frascos - 32 bits, quebra em 3733494166, altura maxima = 4294967295, frascos = 32
+Tempo usado em ms = 1.251745901141582
+Teste de infinitos frascos - 32 bits, quebra em 3733494166, altura maxima = 4294967295
+Tempo usado em ms = 0.4143976010270562
+Teste de 64 frascos - 64 bits, quebra em 1, altura maxima = 18446744073709551615, frascos = 64
+Tempo usado em ms = 0.05602279229571143
+Teste de infinitos frascos - 64 bits, quebra em 1, altura maxima = 18446744073709551615
+Tempo usado em ms = 0.8035635627758908
+Teste de 64 frascos - 64 bits, quebra em 15346542331303405851, altura maxima = 18446744073709551615, frascos = 64
+Tempo usado em ms = 2.6181033162927108
+Teste de infinitos frascos - 64 bits, quebra em 15346542331303405851, altura maxima = 18446744073709551615
+Tempo usado em ms = 0.818959139284636
+Teste de 128 frascos - 128 bits, quebra em 1, altura maxima = 340282366920938463463374607431768211455, frascos = 128
+Tempo usado em ms = 0.05645044719873246
+Teste de infinitos frascos - 128 bits, quebra em 1, altura maxima = 340282366920938463463374607431768211455
+Tempo usado em ms = 1.6349246942481273
+Teste de 128 frascos - 128 bits, quebra em 271700563743019619764393664727381877564, altura maxima = 340282366920938463463374607431768211455, frascos = 128
+Tempo usado em ms = 5.06343405176506
+Teste de infinitos frascos - 128 bits, quebra em 271700563743019619764393664727381877564, altura maxima = 340282366920938463463374607431768211455
+Tempo usado em ms = 1.8812539183880508
+Teste de 256 frascos - 256 bits, quebra em 1, altura maxima = 115792089237316195423570985008687907853269984665640564039457584007913129639935, frascos = 256
+Tempo usado em ms = 0.11332854930048292
+Teste de infinitos frascos - 256 bits, quebra em 1, altura maxima = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+Tempo usado em ms = 3.4383454202864123
+Teste de 256 frascos - 256 bits, quebra em 100923740880692721517490526027297084629810869644218047350424510162565535728527, altura maxima = 115792089237316195423570985008687907853269984665640564039457584007913129639935, frascos = 256
+Tempo usado em ms = 12.222804783234558
+Teste de infinitos frascos - 256 bits, quebra em 100923740880692721517490526027297084629810869644218047350424510162565535728527, altura maxima = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+Tempo usado em ms = 3.3049170905439516

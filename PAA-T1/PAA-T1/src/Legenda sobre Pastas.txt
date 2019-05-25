@@ -1,0 +1,25 @@
+Sobre pastas:
+
+conversor_poggi - Contem o leitor dos arquivos do Poggi pra questao 3
+
+cpuTimer - Contem a classe cpuTimer do Poggi para cronometrar tempo
+
+examplescpuTimer - Codigo de exemplo de como cpuTimer funciona. Alguns
+	podem nao funcionar por estarem fora de __init__.py
+	
+frascos - codigo das classes que fazem o teste dos frascos.
+	FrascosTresPontoDois nao deve ser utilizado.
+	
+frascos_entradas_bigdata - Guarda os arquivos do Poggi de 32 a 256 bits de entrada.
+
+frascos_saida__bigdata - Contem codigo de testes para tabela de velocidade.
+
+frascos_teste_saida_bigdata - Testes de Frascos33 usando arquivos do Poggi.
+
+frascos_testes - Testes de FrascosTresPontoDois e Frascos32Melhorado
+
+frascos_testes_33 - Testes de Frascos33
+
+leitura_de_dados - Contem codigo para leitura de dados dos arquivos do Poggi.
+
+testes_cpu_timer - Teste para ver como cpuTimer funciona.

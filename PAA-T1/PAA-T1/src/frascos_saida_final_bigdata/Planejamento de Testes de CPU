@@ -1,0 +1,30 @@
+Instâncias a serem usadas para teste:
+1, 2, 4, 8, 16, 32, 64, 128, 256 bits
+
+Frascos:
+1, 2, 4, 8, 16, até um máximo igual à quantidade de bits, infinito.
+
+Códigos a testar:
+* Teste de 3.2Melhorado
+* Teste de 3.3 
+
+Em cada teste, cada instância precisa rodar por pelo menos 5 segundos.
+
+Além disso, não esquecer de colocar as instâncias em ordem crescente de tamanho.
+
+ 
+
+Para a medida de tempo de CPU das execu¸c~oes utilize as fun¸c~oes dispon´ıveis no
+link correspondente na p´agina do curso, um exemplo de utiliza¸c~ao ´e apresentado.
+Quando o tempo de CPU for inferior `a 5 segundos, fa¸ca uma repeti¸c~ao da execu¸c~ao
+tantas vezes quantas forem
+necess´arias para que o tempo ultrapasse 5 s (fa¸ca um while), conte quantas
+foram as execu¸c~oes e reporte a m´edia.
+
+Não faz sentido o parágrafo acima porquê CPUTimer também conta milissegundos.
+
+• Obrigatoriamente apresente tabelas contendo tr^es de colunas para cada algoritmo
+ aplicado `as inst^ancias, uma com o valor da complexidade te´orica, uma com o tempo
+ de CPU utilizado e uma com a raz~ao destes dois valores. Cada linha da tabela ´e
+ associada a uma inst^ancia e cont´em a identifica¸c~ao da mesma. Nesta tabela
+ coloque as inst^ancias em ordem crescente de tamanho.
