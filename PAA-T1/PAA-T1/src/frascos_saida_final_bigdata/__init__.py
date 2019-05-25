@@ -256,18 +256,15 @@ def roda_teste_sob_arquivo_33(entrada, nome_do_arquivo_para_tabela,
 
 print("Rezar")
 
-roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_256_01.dat",
-                          "Teste novo.ods", 0, 128)
+roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_32_01.dat",
+                          "Teste novo 32 1.ods", 0, 2)
 
-roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_01.dat",
-                          "Teste novo 192 2.ods", 0, 128)
-
-roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_192_02.dat",
-                          "Teste novo 192 1.ods", 0, 128)
+roda_teste_sob_arquivo_32("../frascos_entradas_bigdata/bignum_32_02.dat",
+                          "Teste novo 32 2.ods", 0, 2)
 
 if False:
     
-    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_64_01.dat",
+    roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_64_021.dat",
                           "Teste2.ods", 64)
     
     roda_teste_sob_arquivo_33("../frascos_entradas_bigdata/bignum_64_02.dat",
